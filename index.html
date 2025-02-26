@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1><i class="fas fa-clipboard-list"></i> Nghaiz Todo List</h1>
+        <p class="subtitle">Tôi yêu LTA</p>
+    </header>
+
+    <div class="todo-form">
+        <input type="text" id="todo-input" placeholder="Add a new task...">
+        <button id="add-todo-btn"><i class="fas fa-plus"></i></button>
+    </div>
+
+    <div id="states-container">
+        <div id="loading-state" class="state">
+            <div class="loader"></div>
+            <p>Loading.....</p>
+        </div>
+
+        <!-- API Error -->
+        <div id="api-error-state" class="state hidden">
+            <i class="fas fa-exclamation-circle error-icon"></i>
+            <h2>Connection Error</h2>
+            <p>Không connect được với server, kiểm tra lại internet</p>
+            <button id="retry-btn" class="retry-btn">Retry</button>
+        </div>
+
+        <!-- Data parsing error -->
+        <div id="parsing-error-state" class="state hidden">
+            <i class="fas fa-file-alt error-icon"></i>
+            <h2>Data Error</h2>
+            <p>Link hỏng rồi thử lại xem</p>
+            <button id="retry-btn-parse" class="retry-btn">Retry</button>
+        </div>
+
+        <!-- Empty -->
+        <div id="empty-state" class="state hidden">
+            <i class="fas fa-clipboard empty-icon"></i>
+            <h2>No Tasks Yet</h2>
+            <p>Hãy add thêm task của bạn phía trên nhé</p>
+        </div>
+    </div>
+
+    <div id="todo-list" class="hidden">
+
+    </div>
+</div>
+
+<footer>
+    <p>LTA LTA LTA LTA LTA LTA LTA LTA LTA LTA LTA LTA LTA LTA LTA</p>
+</footer>
+
+<script src="src/app.js"></script>
+</body>
+</html>
